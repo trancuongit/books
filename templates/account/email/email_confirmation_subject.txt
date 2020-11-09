@@ -1,0 +1,4 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %} Lam On Nhan Comfirm De Tiep Tuc {% endblocktrans %}
+{% endautoescape %}
