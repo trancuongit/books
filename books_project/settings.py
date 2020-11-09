@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -85,6 +85,9 @@ STRIPE_TEST_PUBLISHABLE_KEY='pk_test_51HkS8tCH6VCrG97nemaBJ0xEgy6mrDukLVAe4jilO6
 
 STRIPE_TEST_SECRET_KEY='sk_test_51HkS8tCH6VCrG97nCkQGz4EPiNxhGIasrLLd90zMz0Rz8n01dExanMa5tmqccBGsBgfunCFJoKUWHcndS0tQZ31400XEryzcYw'
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+
+DATABASES['default'].update(db_from_env)
 #######################################
 # Application definition
 
